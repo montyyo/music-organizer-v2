@@ -101,14 +101,40 @@ public class MusicOrganizer
      */
     public void listMatching(String searchString)
     {
+        boolean seHanEncontradoResultados = false;//if secundario no hay coincidencia.
+        //bucle de busquedaen la lista files, para los elementos que contienen la cadena especificada.
         for (String filename : files)
         {
             if(filename.contains(searchString))
             {
                 System.out.println(filename);
+                seHanEncontradoResultados=true; //se ha encontrado resultado, no se ejecuta la opcion booleana
             }
         }
+        
+        if (!seHanEncontradoResultados)
+        {
+            System.out.println("error no se han encontrado archivos el texto");
+        }
+    }
+    
+    /**
+     * reproduce primeros segundos canciones de un archivo
+     */
+    public void playSamplesArtist(String artist)
+    {
+        
+        for(String filename : files)
+        {
+            if(filename.contains(artist))
+            {
+                //metodo de reproduccion en musicplay
+                player.playSample(filename);
+            }
+        }
+        
     }
 }
+
 
 
