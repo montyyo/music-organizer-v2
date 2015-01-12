@@ -95,6 +95,20 @@ public class MusicOrganizer
         }
     
     }
+    
+    /**
+     * imprime los archivos con una cadena dada
+     */
+    public void listMatching(String searchString)
+    {
+        for (String filename : files)
+        {
+            if(filename.contains(searchString))
+            {
+                System.out.println(filename);
+            }
+        }
+    }
 }
 
 
