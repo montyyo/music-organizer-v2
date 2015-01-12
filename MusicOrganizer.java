@@ -134,6 +134,30 @@ public class MusicOrganizer
         }
         
     }
+    
+    public int findFirst(String searchString)
+    {
+        int index = 0;
+        boolean found = false;
+        int sizeArray = files.size();
+        while(!found && index < sizeArray)
+        {
+            String fileName = files.get(index);
+            if(fileName.contains(searchString))
+            {
+                found = true;
+            }
+            else
+            {
+               index++;
+            }
+        }
+        if(!found)
+        {
+             index = -1;
+        }
+        return index;
+    }
 }
 
 
